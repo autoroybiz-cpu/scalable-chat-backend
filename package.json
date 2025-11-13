@@ -1,0 +1,17 @@
+{
+"name": "scalable-chat-backend",
+"version": "1.0.0",
+"description": "Auth and chat services for AutoRoy scalable chat",
+"main": "auth-service.js",
+"scripts": {
+"start:auth": "node auth-service.js",
+"start:chat": "node chat-service.js"
+},
+"author": "Roy",
+"license": "MIT",
+"dependencies": {
+"cors": "^2.8.5",
+"express": "^4.18.2",
+"socket.io": "^4.8.1"
+}
+}
