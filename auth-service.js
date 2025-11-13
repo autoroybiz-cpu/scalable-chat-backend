@@ -5,6 +5,17 @@ const app = express();
 
 // מאפשרים JSON בבקשות
 app.use(express.json());
+app.use((req, res, next) => {
+res.header('Access-Control-Allow-Origin', 'https://autoroy-chat-ui.onrender.com');
+res.header('Access-Control-Allow-Headers', 'Content-Type');
+res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+
+if (req.method === 'OPTIONS') {
+return res.sendStatus(200);
+}
+
+next();
+});
 
 // CORS - כרגע פתוח לכולם (אפשר לצמצם בהמשך לדומיין של ה-UI)
 app.use(cors());
